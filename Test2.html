@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <title>Array Test</title>
+        <script  type="text/javascript">
+
+        document.write("Array sorting");
+        
+        var num1 = [];
+        //var len = 0;
+       // var len = document.getElementById("len1").value;
+        //console.log(len);
+
+
+        function addNumber(){
+        while(true){
+            var input = prompt("add no");
+            if(input === null || input === "b")
+            {
+                break;
+            }
+            num1.push(Number(input));
+            console.log(num1);
+            document.getElementById("show").innerHTML ="You Entered: " + num1;
+            document.getElementById("len1").value = num1;
+        }
+        }
+        function missingNumber(){
+            var n = num1.length;
+            //var nums = [2,4,5,6,3];
+            //document.write(n);
+            var x = n+1;
+            var sum1 = x*(x+1)/2;
+
+            var i = 0;
+            var sum2 = 0;
+
+            for(i = 0; i<n ; i++)
+            {
+                sum2 = sum2 + num1[i];
+            }
+
+            var m = sum1 - sum2;
+            //document.write(m);
+            document.getElementById("msg").innerHTML = "Missing No is: " + m;
+            document.getElementById("miss").innerHTML = "Missing No is: " + m;
+            document.getElementById("miss").style.visibility = "visible";
+            document.getElementById("miss1").value =  m;
+            //alert("shivam");
+        }
+           
+        </script>
+    <br><br>
+    <input type="button" value="Add No" onclick="addNumber()">
+    <br><br>
+    <h2 id="show" style="color: red;"></h2>
+    <h2 id="msg" style="color: red;"></h2>
+    <label id="miss"  style="color:seagreen ; visibility: hidden;"></label>
+    <br><br>
+    <input type="text" placeholder="Missing Value" id="miss1">
+    <br><br>
+    <input type="text" placeholder="Array length" id="len1"> 
+    <br><br>
+    <input type="button" value="Missing No" onclick="missingNumber()">
+    </head>
+
+    <body>
+        
+    </body>
+</html>
